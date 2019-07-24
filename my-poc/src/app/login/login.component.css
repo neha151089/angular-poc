@@ -1,0 +1,27 @@
+.btnActiveStyle {
+  background-color: green;
+  color: white;
+  alignment: center;
+}
+
+.spanErrorStyle {
+  color: red;
+  font-size: small;
+}
+
+.inputDangerStyle {
+  border: red;
+}
+
+.eyeIconStyle {
+  width: 50px;
+  height: 25px;
+  right: auto;
+}
+
+
+.pwdWithImage {
+  background-image: url(https://cdn3.iconfinder.com/data/icons/interface-8/128/InterfaceExpendet-09-128.png);
+  background-position: right;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,94 @@
+<div id="loginForm">
+  <fieldset>
+    <legend>Login form</legend>
+    <div class="container">
+      <form (ngSubmit)="onLoginClick(loginForm)" #loginForm="ngForm">
+        <div ngModelGroup="loginData" #loginData="ngModelGroup">
+          <div class="row" #uNameRow>
+            <div class="col-md-4">
+              <label>Username/Email : </label>
+            </div>
+            <div class="col-md-4">
+              <input
+                type="text"
+                ngModel
+                class="form-control"
+                name="username"
+                required
+                #username="ngModel"/>
+            </div>
+            <div class="col-md-4">
+              <span *ngIf="username.invalid && username.touched"
+                    class="spanErrorStyle">{{ usernameErrorMsg }}</span>
+            </div>
+          </div>
+          <br>
+          <div class="row" #pwdRow>
+            <div class="col-md-4">
+              <label>Password : </label>
+            </div>
+            <div class="col-md-4">
+              <div class="input-group">
+                <input
+                  type="password"
+                  ngModel
+                  class="form-control"
+                  name="password"
+                  required
+                  maxlength="15"
+                  #password="ngModel"/>
+                <span class="input-group-append">
+                  <img src="assets/images/eye-icon.png" class="eyeIconStyle">
+                </span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <span *ngIf="password.invalid && password.touched"
+                    class="spanErrorStyle">{{ passwordErrorMsg }}</span>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-12">
+              <span class="text-danger">{{ errorMsg }}</span>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-12">
+              <span class="text-success" *ngIf="isLoggedInAsAdmin">Hey, you are an admin, you can see the logged-in users list if you want, for this
+                <a [routerLink]="['./logged-in-users']" (click)="onSeeLoggedInUsersClick()">click here</a></span>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-12">
+              <button type="submit" class="btn btn-primary"
+                      [disabled]="loginData.invalid && (loginData.touched || loginData.untouched)">Login
+              </button>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div ngModelGroup="others" #others="ngModelGroup">
+          <div class="row" #forgetCredentialRow>
+            <div class="col-md-4">
+              <span>Forget your username/password, </span>
+            </div>
+            <div class="col-md-8">
+              <a class="text-primary" (click)="onForgetPasswordClick()"><u>click here</u></a>
+            </div>
+          </div>
+          <div class="row" #regBtnRow>
+            <div class="col-md-4">
+              <span>For new user, </span>
+            </div>
+            <div class="col-md-8">
+              <a class="text-primary" (click)="onRegisterHereClick()"><u>Register here</u></a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </fieldset>
+</div>

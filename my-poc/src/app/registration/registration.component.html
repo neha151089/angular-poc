@@ -1,0 +1,137 @@
+<div id="regForm">
+  <fieldset>
+    <legend>Registration form</legend>
+    <div class="container">
+      <form #regForm="ngForm" (ngSubmit)="onSubmit(regForm)">
+        <div class="row" #successMessage>
+          <div class="col-md-12">
+            <span *ngIf="isAddedNewUser" class="text-success">Congratulations ! you have been successfully registered<br>
+            <span>Your username is <mark>{{ generatedUsername }}<br></mark> and your default password is <mark>abc</mark>, but please change it within 24 hrs.</span></span>
+          </div>
+        </div>
+        <br>
+        <div class="row" #fNameRow>
+          <div class="col-md-4">
+            <label>First name : </label>
+          </div>
+          <div class="col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              ngModel
+              name="fName"
+              required
+              #fName="ngModel"
+              minlength="2"
+              maxlength="15">
+          </div>
+          <div class="col-md-4">
+            <span *ngIf="fName.invalid && fName.touched" class="text-danger" #fNameErrMsg>{{ firstNameErrMsg }}</span>
+          </div>
+        </div>
+        <br>
+        <div class="row" #lNameRow>
+          <div class="col-md-4">
+            <label>Last name : </label>
+          </div>
+          <div class="col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              ngModel
+              name="lName"
+              required
+              minlength="2"
+              maxlength="15"
+              #lName="ngModel"></div>
+          <div class="col-md-4">
+            <span *ngIf="lName.invalid && lName.touched" class="text-danger" #lNameErrMsg>{{ lastNameErrMsg }}</span>
+          </div>
+        </div>
+        <br>
+        <div class="row" #dobRow>
+          <div class="col-md-4 col-md-4 col-md-4">
+            <label>Date of birth : </label>
+          </div>
+          <div class="col-md-4">
+            <input
+              type="date"
+              ngModel
+              name="dob"
+              class="form-control"
+              required
+              #dob="ngModel">
+          </div>
+          <div class="col-md-4">
+            <span class="text-danger" *ngIf="dob.invalid && dob.touched">{{ dobErrMsg }}</span>
+          </div>
+        </div>
+        <br>
+        <div class="row" #nationalityRow>
+          <div class="col-md-4">
+            <label>Nationality : </label>
+          </div>
+          <div class="col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              ngModel
+              name="nationality"
+              required
+              #nationality="ngModel">
+          </div>
+          <div class="col-md-4">
+            <span *ngIf="nationality.invalid && nationality.touched" class="text-danger">{{ nationalityErrMsg }}</span>
+          </div>
+        </div>
+        <br>
+        <div class="row" #emailRow>
+          <div class="col-md-4">
+            <label>Your email address : </label>
+          </div>
+          <div class="col-md-4"><input
+            type="email"
+            class="form-control"
+            ngModel
+            name="email"
+            required
+            #email="ngModel">
+          </div>
+          <div class="col-md-4">
+            <span *ngIf="email.invalid && email.touched" class="text-danger">{{ emailErrMsg }}</span>
+          </div>
+        </div>
+        <br>
+        <div class="row" #contactRow>
+          <div class="col-md-4">
+            <label>Your contact number : </label>
+          </div>
+          <div class="col-md-4"><input
+            type="phone"
+            class="form-control"
+            ngModel
+            name="contact"
+            required
+            minlength="10"
+            maxlength="12"
+            #contact="ngModel">
+          </div>
+          <div class="col-md-4">
+            <span *ngIf="contact.invalid && contact.touched" class="text-danger">{{ contactErrMsg }}</span>
+          </div>
+        </div>
+        <br>
+        <div class="row" #buttonRow>
+          <div class="col-md-12">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="regForm.invalid && (regForm.touched || regForm.untouched)"
+            >Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </fieldset>
+</div>

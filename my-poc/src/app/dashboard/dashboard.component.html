@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12" align="right">
+      <span class="text-primary">Welcome {{ loggedInUser | titlecase }}</span>
+      <img src="assets/images/profile-icon.png" class="iconStyle" (click)="onProfileIconClick()">
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <nav class="navbar">
+        <div class="navbar-header">
+          <img src="assets/images/angular-icon.png" class="iconStyle"/>
+          <a class="navbar-brand" href="https://angular.io/">Angular learning</a>
+        </div>
+        <ul class="nav nav-pills">
+          <li>
+            <a
+              [routerLink]="['./my-learnings']"
+              class="nav-link"
+              [routerLinkActive]="['active']"
+              (click)="onMyLearningsClick()">
+              My learnings
+            </a></li>
+          <li>
+            <a
+              [routerLink]="['./topics-covered']"
+              [routerLinkActive]="['active']"
+              class="nav-link"
+              (click)="onTopicsCoveredClick()">
+              Topics covered
+            </a>
+          </li>
+          <li>
+            <a
+              [routerLink]="['./topics-to-explore']"
+              [routerLinkActive]="['active']"
+              class="nav-link"
+              (click)="onTopicsToExploreClick()">
+              Topics to explore</a>
+          </li>
+          <li>
+            <a
+              [routerLink]="['./references']"
+              [routerLinkActive]="['active']"
+              class="nav-link"
+              (click)="onReferencesClicked()">
+              References</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+

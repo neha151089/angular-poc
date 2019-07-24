@@ -1,0 +1,48 @@
+{
+  "loggedUsers": [
+    {
+      "id": 1,
+      "username": "Neha",
+      "password": "admin",
+      "fName": "Neha",
+      "lName": "Bindal",
+      "dob": "15101989",
+      "nationality": "Indian",
+      "email": "tushar@gmail.com",
+      "contact": "8554904201"
+    },
+    {
+      "id": 2,
+      "username": "Tushar",
+      "password": "abc",
+      "fName": "Tushar",
+      "lName": "Bindal",
+      "dob": "05401988",
+      "nationality": "Indian",
+      "email": "tushar@gmail.com",
+      "contact": "8554904202"
+    },
+    {
+      "username": "BinKri20",
+      "password": "abc",
+      "fName": "Krisha",
+      "lName": "Bindal",
+      "dob": "2017-03-07",
+      "nationality": "Indian",
+      "email": "krisha.bindal@gmail.com",
+      "contact": "8554904301",
+      "id": 3
+    },
+    {
+      "username": "AgrNid19",
+      "password": "abc",
+      "fName": "Nidhi",
+      "lName": "Agrawal",
+      "dob": "1996-11-04",
+      "nationality": "Indian",
+      "email": "nidhi.agrawal@gmail.com",
+      "contact": "9673719281",
+      "id": 4
+    }
+  ]
+}

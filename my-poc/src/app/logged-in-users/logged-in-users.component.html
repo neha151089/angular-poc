@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div>
+    <h3 class="text-primary">List of logged in users</h3>
+  </div>
+  <div id="logged-in-users">
+    <div>
+      <table class="table table-bordered table-hover align-items-center">
+        <thead class="table-primary">
+        <tr>
+          <td>Id</td>
+          <td>Username</td>
+          <td>Password</td>
+          <td>First name</td>
+          <td>Last name</td>
+          <td>Dob</td>
+          <td>Nationality</td>
+          <td>Email</td>
+          <td>Contact</td>
+          <td>Update/Delete</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of loggedUsers" class="table-hover">
+          <td>{{ user.id }}</td>
+          <td>{{ user.username | titlecase }}</td>
+          <td>{{ user.password }}</td>
+          <td>{{ user.fName | titlecase}}</td>
+          <td>{{ user.lName | titlecase }}</td>
+          <td>{{ user.dob | lowercase | date}}</td>
+          <td>{{ user.nationality | titlecase}}</td>
+          <td>{{ user.email | lowercase}}</td>
+          <td>{{ user.contact}}</td>
+          <td><a [routerLink]="['/update-details',user.id]">Update</a>
+            <img src="assets/images/delete-icon.png" class="iconStyle" (click)="onDelete(user.id)"></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
